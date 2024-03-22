@@ -29,14 +29,8 @@ const PDFViewer = (props) => {
     setConnections(conn);
 
     PDFJS.getDocument(props.url).promise.then(
-      (pdf) => {
-        (pdf) => setPdf(pdf);
-        props.getLoadingState(false);
-      },
-      (error) => {
-        console.error(error);
-        props.updateError(true);
-      }
+      (pdf) => setPdf(pdf),
+      (error) => console.error(error)
     );
 
     // Destroy connections layer on unmount

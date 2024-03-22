@@ -117,7 +117,10 @@ const AnnotatablePage = (props) => {
   }, [props.annotationMode]);
 
   return (
-    <div ref={containerEl} className={"pdf-container"}>
+    <div
+      ref={containerEl}
+      className={props.debug ? "page-container debug" : "page-container"}
+    >
       <div className="textLayer" />
     </div>
   );
